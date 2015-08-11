@@ -15,6 +15,16 @@ public class TestAmnesiaPlayer {
 		player = new AmnesiaPlayer(new RobinStrategy());
 	}
 	
+	/*********** MEMORY ACCESS ***********/
+	@Test
+	public void testMemoryCannotBeAlteredExplicitly() {
+		// when
+		player.memory().add(1);
+		// then
+		assertEquals(5, player.memory().freeMemory());
+	}
+	
+	
 	/*********** MEMORY SIZE ***********/
 	
 	@Test

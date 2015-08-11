@@ -10,8 +10,11 @@ public class AmnesiaPlayer {
 		this.strategy = strategy;
 	}
 
-	public final PlayerMemory memory() {
-		return memory;
+	/**
+	 * @return Copy of {@link memory}
+	 */
+	public PlayerMemory memory() {
+		return new PlayerMemory(memory);
 	}
 
 	public int score() {

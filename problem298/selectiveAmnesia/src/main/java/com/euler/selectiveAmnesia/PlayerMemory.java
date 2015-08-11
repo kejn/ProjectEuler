@@ -8,6 +8,17 @@ public class PlayerMemory extends ArrayList<Integer> {
 
 	public static final int MEMORY_SIZE = 5;
 
+	public PlayerMemory() {
+		super();
+	}
+	
+	public PlayerMemory(PlayerMemory memory) {
+		super();
+		for (Integer integer : memory) {
+			add(integer);
+		}
+	}
+
 	public int freeMemory() {
 		return MEMORY_SIZE - size();
 	}
