@@ -4,12 +4,12 @@ import org.junit.Test;
 
 import junit.framework.TestCase;
 
-public class RandomIntegerTest extends TestCase {
+public class TestRandom1_10 extends TestCase {
 
 	@Test
-	public void shouldReturnNumberInRange1_10() {
-		RandomInteger randomNumber = new RandomInteger(1,10);
-		int number = randomNumber.next();
+	public void testShouldReturnNumberInRange1_10() {
+		Random1_10 random = new Random1_10();
+		int number = random.next();
 		assertFalse(10 - number < 0);
 	}
 }
