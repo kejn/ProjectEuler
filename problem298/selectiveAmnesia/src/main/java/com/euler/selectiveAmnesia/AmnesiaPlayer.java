@@ -27,5 +27,10 @@ public class AmnesiaPlayer {
 			strategy.addNumber(number, memory);
 		}
 	}
+	
+	@Override
+	public String toString() {
+		return memory.toString() + " score: " + score;
+	}
 
 }
