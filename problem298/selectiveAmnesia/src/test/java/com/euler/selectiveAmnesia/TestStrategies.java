@@ -21,8 +21,8 @@ public class TestStrategies {
 		player.remember(1); // memory full, but only +1 score
 		player.remember(6); // memory-exceeding number
 		//then
-		assertTrue(player.hasInMemory(1));
-		assertFalse(player.hasInMemory(2));
+		assertTrue(player.memory().contains(1));
+		assertFalse(player.memory().contains(2));
 	}
 	
 	// replace the number that's been in the memory the longest time.
@@ -40,8 +40,8 @@ public class TestStrategies {
 		player.remember(6); // memory-exceeding number
 		player.remember(7); // memory-exceeding number
 		//then
-		assertFalse(player.hasInMemory(1));
-		assertFalse(player.hasInMemory(2));
+		assertFalse(player.memory().contains(1));
+		assertFalse(player.memory().contains(2));
 	}
 
 }

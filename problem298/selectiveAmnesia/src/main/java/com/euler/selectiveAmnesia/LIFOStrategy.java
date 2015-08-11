@@ -1,7 +1,5 @@
 package com.euler.selectiveAmnesia;
 
-import java.util.List;
-
 /**
  * LIFO strategy is to:<br>
  * > remove number from the beginning of memory if it's full<br>
@@ -10,15 +8,19 @@ import java.util.List;
 public abstract class LIFOStrategy implements ReplaceStrategy {
 
 	@Override
-	public void removeNumberIf(List<Integer> memory, boolean isFull) {
-		if(isFull) {
+	public void removeNumberIf(PlayerMemory memory) {
+		if(memory.freeMemory() == 0) {
 			memory.remove(0);
 		}
 	}
 
 	@Override
-	public void addNumber(Integer number, List<Integer> toMemory) {
-		toMemory.add(number);
+	public void addNumber(Integer number, PlayerMemory toMemory) {
+		try {
+			toMemory.add(number);
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
 	}
 
 }

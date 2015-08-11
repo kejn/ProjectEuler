@@ -20,18 +20,18 @@ public class TestAmnesiaPlayer {
 	@Test
 	public void testWholeMemoryFreeAtBeginning() {
 		// then
-		assertEquals(AmnesiaPlayer.MEMORY_SIZE, player.freeMemory());
+		assertEquals(PlayerMemory.MEMORY_SIZE, player.memory().freeMemory());
 	}
 
 	@Test
 	public void testMemoryHoldsMax5Numbers() {
 		// when
-		for (int i = 0; i < AmnesiaPlayer.MEMORY_SIZE + 1; i++) {
+		for (int i = 0; i < PlayerMemory.MEMORY_SIZE + 1; i++) {
 			player.remember(i);
 		}
 		// then
 		assertEquals(5, player.memory().size());
-		assertEquals(0, player.freeMemory());
+		assertEquals(0, player.memory().freeMemory());
 	}
 
 	/*********** SCORE COUNTING ***********/
